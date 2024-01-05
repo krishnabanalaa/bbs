@@ -1,0 +1,14 @@
+---
+- name: Install package using apt
+  hosts: your_host_group_or_IP
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install a package
+      apt:
+        name: your_package_name
+        state: present
